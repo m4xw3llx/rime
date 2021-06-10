@@ -4,11 +4,11 @@
 schema:
   schema_id: double_pinyin_mspy
   name: 微软雙拼
-  version: "0.15"
+  version: "1.0"
   author:
-    - 佛振 <chen.sst@gmail.com>
+    - Dean
   description: |
-    朙月拼音＋自然碼雙拼方案。
+    基于 @佛振 自然码双拼修改的微软双拼方案。
   dependencies:
     - stroke
 
@@ -48,7 +48,7 @@ engine:
     - uniquifier
 
 speller:
-  alphabet: zyxwvutsrqponmlkjihgfedcba
+  alphabet: zyxwvutsrqponmlkjihgfedcba;
   delimiter: " '"
   algebra:
     - erase/^xx$/
@@ -140,3 +140,8 @@ punctuator:
 
 key_binder:
   import_preset: default
+
+recognizer:
+  import_preset: default
+  patterns:
+    reverse_lookup: "`[a-z]*'?$"
